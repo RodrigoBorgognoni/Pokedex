@@ -1,0 +1,13 @@
+:root{
+    --background-grass-type: #48D0B0;
+    --background-fire-type: #FB6D6C;
+    --background-water-type:#77BEFE;
+    --text-color-black: #000;
+    --text-color-white: #fff;
+    --text-opacity: 0.3;
+    --gutter: 130px;
+    --gutter-2x: calc(var(--gutter) * 2);
+    --gutter-4x: calc(var(--gutter) * 4);
+    --half-gutter: calc(var(--gutter) / 2);
+    --quarter-gutter: calc(var(--gutter) / 4);
+}

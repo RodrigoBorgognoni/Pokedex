@@ -1,3 +1,5 @@
+@import url('variables.css');
+
 * {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
@@ -11,7 +13,7 @@
     margin: 0 0 1rem;
 }
 
-ol.pokemons {
+.pokemons_list {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -19,18 +21,24 @@ ol.pokemons {
     grid-template-columns: 1fr 1fr;
 }
 
-ol.pokemons li {
+.pokemon {
     display: flex;
     flex-direction: column;
     margin: 0.5rem;
     padding: 2rem 1rem;
     border-radius: 1rem;
-    background-color: #14a06f;
-    color: white;
+    background-color: var(--background-grass-type);
+    color: var(--text-color-white);
 }
 
-ol.pokemons li img{
+.pokemon .number{
+    color: var(--text-color-black);
+    opacity: var(--text-opacity);
+    text-align: right;
+}
+
+.pokemon .detail img{
     max-width: 100%;
-    height: 130px;
+    height: var(--gutter);
     align-self: flex-end;
 }
