@@ -1,44 +1,72 @@
 @import url('variables.css');
 
 * {
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
+    font-family: var(--font-family);
+    box-sizing: var(--box-sizing);
 }
 
 .content {
-    padding: 1rem;
+    padding: var(--content-padding);
 }
 
 .content h1 {
-    margin: 0 0 1rem;
+    margin: var(--content-margin-h1);
 }
 
 .pokemons_list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    list-style: var(--list-type);
+    padding: var(--padding-zero);
+    margin: var(--margin-zero);
+    display: var(--display-grid);
+    grid-template-columns: var(--grid-two-column);
 }
 
 .pokemon {
-    display: flex;
-    flex-direction: column;
-    margin: 0.5rem;
-    padding: 2rem 1rem;
-    border-radius: 1rem;
-    background-color: var(--background-grass-type);
-    color: var(--text-color-white);
+    display: var(--display-flex);
+    flex-direction: var(--flex-direction-column);
+    margin: var(--margin-pokemon);
+    padding: var(--padding-pokemon);
+    border-radius: var(--border-radius);
+    background-color: var(--background-grass);
 }
 
-.pokemon .number{
+.pokemon .number {
     color: var(--text-color-black);
     opacity: var(--text-opacity);
-    text-align: right;
+    text-align: var(--text-align);
+    font-size: var(--font-size-poketype);
 }
 
-.pokemon .detail img{
-    max-width: 100%;
-    height: var(--gutter);
-    align-self: flex-end;
+.pokemon .name{
+    color: var(--text-color-white);
+    margin-bottom: var(--margin-zero);
+}
+
+.pokemon .detail {
+    display: var(--display-flex);
+    flex-direction: var(--flex-direction-row);
+    align-items: var(--align-center);
+    justify-content: var(--justify-space-between);
+}
+
+
+.pokemon .detail .types {
+    list-style: var(--list-type-none);
+    padding: var(--padding-types);
+    margin: var(--margin-types);
+}
+
+.pokemon .detail .types .type {
+ background-color: var(--background-grass-type);
+ color: var(--text-color-white);
+ padding: var( --padding-type);
+ margin: var(--margin-type);
+ font-size: var(--font-size-poketype);
+ border-radius: var(--border-radius);
+}
+
+.pokemon .detail img {
+    max-width: var(--img-width-full);
+    height: var(--half-gutter);
+    align-self: var(--align-flex-end);
 }

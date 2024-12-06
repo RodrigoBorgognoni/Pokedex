@@ -1,11 +1,44 @@
 :root{
-    --background-grass-type: #48D0B0;
-    --background-fire-type: #FB6D6C;
-    --background-water-type:#77BEFE;
+    --font-family: 'Roboto', sans-serif;
+    --font-size-poketype: .625rem; 
+    --box-sizing: border-box;
+    --list-type-none: none;
+    --img-width-full: 100%;
+    
+    --border-radius: 1rem;
+    
+    --display-grid: grid;
+    --grid-two-column: 1fr 1fr;
+
+    --display-flex: flex;
+    --flex-direction-row: row;
+    --flex-direction-column: column;
+
+    --align-flex-end: flex-end;
+    --align-center: center;
+    --justify-space-between: space-between;
+
+    --content-padding: 1rem;
+    --padding-zero: 0;
+    --padding-pokemon: 1rem;
+    --padding-type: .25rem .5rem;
+    
+    --content-margin-h1: 0 0 1rem;
+    --margin-zero: 0;
+    --margin-pokemon: 0.5rem;
+    --margin-type: .25rem 0;
+
+    --background-grass: #48D0B0;
+    --background-grass-type: #61E1C9;
+    --background-fire: #FB6D6C;
+    --background-water:#77BEFE;
+
     --text-color-black: #000;
     --text-color-white: #fff;
     --text-opacity: 0.3;
-    --gutter: 130px;
+    --text-align: right;
+
+    --gutter: 140px;
     --gutter-2x: calc(var(--gutter) * 2);
     --gutter-4x: calc(var(--gutter) * 4);
     --half-gutter: calc(var(--gutter) / 2);
