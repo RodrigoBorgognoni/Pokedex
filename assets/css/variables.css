@@ -3,12 +3,17 @@
     --font-size-poketype: .625rem; 
     --box-sizing: border-box;
     --list-type-none: none;
+    --height-full: 100vh;
+    --width-full: 100vw;
     --img-width-full: 100%;
     
     --border-radius: 1rem;
     
     --display-grid: grid;
+    --grid-one-column: 1fr;
     --grid-two-column: 1fr 1fr;
+    --grid-three-column: 1fr 1fr 1fr;
+    --grid-four-column: 1fr 1fr 1fr 1fr;
 
     --display-flex: flex;
     --flex-direction-row: row;
@@ -27,20 +32,32 @@
     --margin-zero: 0;
     --margin-pokemon: 0.5rem;
     --margin-type: .25rem 0;
+    --margin-mQuery-lg: 1rem auto;
+    
+    --height-mQuery-lg: auto;
 
+    --background-grey: #F6F8FC;
+    --background-white: #FFFFFF;
     --background-grass: #48D0B0;
     --background-grass-type: #61E1C9;
     --background-fire: #FB6D6C;
     --background-water:#77BEFE;
-
+    
     --text-color-black: #000;
     --text-color-white: #fff;
     --text-opacity: 0.3;
     --text-align: right;
-
+    
     --gutter: 140px;
     --gutter-2x: calc(var(--gutter) * 2);
     --gutter-4x: calc(var(--gutter) * 4);
     --half-gutter: calc(var(--gutter) / 2);
     --quarter-gutter: calc(var(--gutter) / 4);
+
+    --mQuery-width-xsm: 576px;
+    --mQuery-width-sm: 576px;
+    --mQuery-width-md: 768px;
+    --mQuery-width-lg: 992px;
+    --mQuery-width-xl: 1200px;
+    --mQuery-width-xxl: 1400px;
 }

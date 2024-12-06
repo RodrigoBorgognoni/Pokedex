@@ -1,0 +1,84 @@
+@import url('variables.css');
+
+.pokemons_list {
+    list-style: var(--list-type);
+    padding: var(--padding-zero);
+    margin: var(--margin-zero);
+    display: var(--display-grid);
+    grid-template-columns: var(--grid-one-column);
+}
+
+.pokemon {
+    display: var(--display-flex);
+    flex-direction: var(--flex-direction-column);
+    margin: var(--margin-pokemon);
+    padding: var(--padding-pokemon);
+    border-radius: var(--border-radius);
+    background-color: var(--background-grass);
+}
+
+.pokemon .number {
+    color: var(--text-color-black);
+    opacity: var(--text-opacity);
+    text-align: var(--text-align);
+    font-size: var(--font-size-poketype);
+}
+
+.pokemon .name {
+    color: var(--text-color-white);
+    margin-bottom: var(--margin-zero);
+}
+
+.pokemon .detail {
+    display: var(--display-flex);
+    flex-direction: var(--flex-direction-row);
+    align-items: var(--align-center);
+    justify-content: var(--justify-space-between);
+}
+
+.pokemon .detail .types {
+    list-style: var(--list-type-none);
+    padding: var(--padding-types);
+    margin: var(--margin-types);
+}
+
+.pokemon .detail .types .type {
+    background-color: var(--background-grass-type);
+    color: var(--text-color-white);
+    padding: var(--padding-type);
+    margin: var(--margin-type);
+    font-size: var(--font-size-poketype);
+    border-radius: var(--border-radius);
+}
+
+.pokemon .detail img {
+    max-width: var(--img-width-full);
+    height: var(--half-gutter);
+    align-self: var(--align-flex-end);
+}
+
+/*
+#######################
+Media Queries
+#######################
+*/
+
+/* On screens that are 380px or more*/
+@media screen and (min-width: 380px) {
+    .pokemons_list {
+        grid-template-columns: var(--grid-two-column);
+    }
+}
+
+/* On screens that are 576px or more*/
+@media screen and (min-width: 576px) {
+    .pokemons_list {
+        grid-template-columns: var(--grid-three-column);
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .pokemons_list {
+        grid-template-columns: var(--grid-four-column);
+    }
+}
