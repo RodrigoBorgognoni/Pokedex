@@ -14,24 +14,7 @@ body {
     height: var(--height-full);
     width: var(--width-full);
 }
-
+/* 
 .content h1 {
     margin: var(--content-margin-h1);
-}
-
-/*
-#######################
-Media Query
-#######################
-*/
-
-
-/* On screens that are 992px or more*/
-@media screen and (min-width: 992px) {
-    .content {
-        max-width: var(--mQuery-width-lg);
-        height: var(--height-mQuery-lg);
-        margin: var(--margin-mQuery-lg);
-        border-radius: var(--border-radius);
-    }
-}
+} */

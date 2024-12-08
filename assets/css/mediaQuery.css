@@ -1,0 +1,31 @@
+@import url('variables.css');
+
+/* On screens that are 992px or more*/
+@media screen and (min-width: 992px) {
+    .content {
+        max-width: var(--mQuery-width-lg);
+        height: var(--height-mQuery-lg);
+        margin: var(--margin-mQuery-lg);
+        border-radius: var(--border-radius);
+    }
+}
+
+/* On screens that are 380px or more*/
+@media screen and (min-width: 380px) {
+    .pokemons_list {
+        grid-template-columns: var(--grid-two-column);
+    }
+}
+
+/* On screens that are 576px or more*/
+@media screen and (min-width: 576px) {
+    .pokemons_list {
+        grid-template-columns: var(--grid-three-column);
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .pokemons_list {
+        grid-template-columns: var(--grid-four-column);
+    }
+}

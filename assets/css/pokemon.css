@@ -56,29 +56,3 @@
     height: var(--half-gutter);
     align-self: var(--align-flex-end);
 }
-
-/*
-#######################
-Media Queries
-#######################
-*/
-
-/* On screens that are 380px or more*/
-@media screen and (min-width: 380px) {
-    .pokemons_list {
-        grid-template-columns: var(--grid-two-column);
-    }
-}
-
-/* On screens that are 576px or more*/
-@media screen and (min-width: 576px) {
-    .pokemons_list {
-        grid-template-columns: var(--grid-three-column);
-    }
-}
-
-@media screen and (min-width: 992px) {
-    .pokemons_list {
-        grid-template-columns: var(--grid-four-column);
-    }
-}
