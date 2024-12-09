@@ -1,7 +1,7 @@
 @import url('variables.css');
 
-.pokemons_list {
-    list-style: var(--list-type);
+.pokemon_list {
+    list-style: var(--list-type-none);
     padding: var(--padding-zero);
     margin: var(--margin-zero);
     display: var(--display-grid);
