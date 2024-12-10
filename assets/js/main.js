@@ -1,6 +1,3 @@
-const offset = 0;
-const limit = 10;
-const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
 const pokemonList = document.getElementById('pokemon_list');
 
 //Function to capitalize only the first letter
@@ -37,19 +34,6 @@ function createPokemon(pokemon) {
     pokemonList.appendChild(newPokemon); //adds the new li as last child to pokemonList
 }
 
-//Async function to call PokeApi
-async function fetchData(url) {
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Erro ao buscar dados:', error);
-    } finally {
-        console.log('Requisição Concluída');
-    }
-}
-
 // Function to convert data into HTML
 function convertDataToHtml(data) {
     const pokemons = data.results; // Returns only the pokemon (array of results) of data object
@@ -61,13 +45,13 @@ function convertDataToHtml(data) {
     }
 }
 
-async function loadPokemon(url) {
-    const data = await fetchData(url);
+async function loadPokemon() {
+    const data = await pokeApi.getPokemons();
     if (data) {
         convertDataToHtml(data);
     } else {
-        window.alert('Unable to Load Pokemons');
+        return;
     }
 }
 
-loadPokemon(url);
+loadPokemon();
