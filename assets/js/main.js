@@ -27,22 +27,15 @@ function pokemonToLi(pokemon) {
             `;
 }
 
-//function to create dynamically and add a new pokemon to our list
-function createPokemon(pokemon) {
-    const newPokemon = document.createElement('li'); //creates a new li
-    newPokemon.innerHTML = pokemonToLi(pokemon); //calls our pokemonToLi to create the whole structure of our pokemon with .innerhtml
-    pokemonList.appendChild(newPokemon); //adds the new li as last child to pokemonList
-}
-
 // Function to convert data into HTML
 function convertDataToHtml(data) {
     const pokemons = data.results; // Returns only the pokemon (array of results) of data object
-    // Loop 'for' to iterate Pokemon list
-    for (let index = 0; index < pokemons.length; index++) {
-        const pokemon = pokemons[index];
-        console.log(pokemon);
-        createPokemon(pokemon); //calls our function and adds pokemon based on its index
-    }
+
+    //using map to go through the pokemons array, get our pokemon list converts it to a li list
+    //join it without space
+    pokemonList.innerHTML += pokemons.map(pokemonToLi).join('');
+
+    console.log(pokemons.map(pokemonToLi));
 }
 
 async function loadPokemon() {

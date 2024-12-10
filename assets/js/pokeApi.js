@@ -1,7 +1,7 @@
 const pokeApi = {};
 
 //Async function to call PokeApi
-pokeApi.getPokemons = async (offset = 0, limit = 10) => {
+pokeApi.getPokemons = async (offset = 0, limit = 9) => {
     const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
     try {
         const response = await fetch(url);
