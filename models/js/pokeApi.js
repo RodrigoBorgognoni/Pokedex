@@ -1,4 +1,4 @@
-import Pokemon from './pokeModel.js';
+import { convertApiDetailsToPokemon } from './pokeModel.js';
 
 const pokeApi = {};
 
@@ -7,7 +7,7 @@ pokeApi.getPokemonDetail = async function (pokemon) {
     try {
         const response = await fetch(pokemon.url); // Fetch the Pokémon details from the provided URL
         const data = await response.json(); // Parse the response as JSON and return the result
-        return new Pokemon(data.order, data.name, data.color, data.types, data.sprites.other['official-artwork'].front_default);
+        return convertApiDetailsToPokemon(data);
     } catch (error) {
         console.error('Erro ao buscar detalhes dos Pokémons:', error);
         // Re-throw the error to handle it in the calling function

@@ -1,15 +1,19 @@
-export function capitalizeFirstLetter(pokeName) {
+function capitalizeFirstLetter(pokeName) {
     return pokeName.charAt(0).toUpperCase() + pokeName.slice(1);
 }
 
-export function pokemonToLi(pokemon) {
+function pokemonToLi(pokemon) {
+    if (!pokemon || !pokemon.name) {
+        console.error('Objeto Pokemon inválido:', pokemon);
+        return ''; // Returns empty string if invalid object
+    }
     return `
         <li class="pokemon">
             <span class="number">#${pokemon.order.toString().padStart(3, '0')}</span>
             <span class="name">${capitalizeFirstLetter(pokemon.name)}</span>
             <div class="detail">
                 <ol class="types">
-                    ${pokemon.types.map(typeInfo => `<li class="type">${capitalizeFirstLetter(typeInfo.type.name)}</li>`).join('')}
+                    ${pokemon.types.map(type => `<li class="type">${capitalizeFirstLetter(type)}</li>`).join('')}
                 </ol>
                 <img src="${pokemon.photo}" alt="${pokemon.name}" />
             </div>
