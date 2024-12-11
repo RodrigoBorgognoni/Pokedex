@@ -48,7 +48,7 @@
     --text-opacity: 0.3;
     --text-align: right;
     
-    --gutter: 140px;
+    --gutter: 160px;
     --gutter-2x: calc(var(--gutter) * 2);
     --gutter-4x: calc(var(--gutter) * 4);
     --half-gutter: calc(var(--gutter) / 2);

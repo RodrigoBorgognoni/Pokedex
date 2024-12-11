@@ -10,18 +10,21 @@ function capitalizeFirstLetter(pokeName) {
     */
 }
 
+function convertPokemonTypes (pokemonTypes){
+    return pokemonTypes.map((typeSlot) => `<li class="type">${typeSlot.type.name}</li>`
+)}
+
 //function to create an html structure of the pokemon
 function pokemonToLi(pokemon) {
     return `
             <li class="pokemon">
-                <span class="number">#001</span>
+                <span class="number">#00${pokemon.order}</span>
                 <span class="name">${capitalizeFirstLetter(pokemon.name)}</span>
                 <div class="detail">
                     <ol class="types">
-                        <li class="type">Grass</li>
-                        <li class="type">Poison</li>
+                        ${convertPokemonTypes(pokemon.types).join('')}
                     </ol>
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="${pokemon.name}" />
+                    <img src=${pokemon.sprites.other["official-artwork"].front_default} alt="${pokemon.name}" />
                 </div>
             </li>
             `;
