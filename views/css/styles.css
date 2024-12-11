@@ -1,0 +1,11 @@
+/* Import variables */
+@import url('variables.css');
+
+/* Import global styles */
+@import url('global.css');
+
+/* Import pokemon-specific styles */
+@import url('pokemon.css');
+
+/* Import media query styles */
+@import url('mediaQuery.css');
