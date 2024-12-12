@@ -28,3 +28,9 @@ In vs code Terminal execute the following command:
 | Large             |     lg          | ≥992px     | 
 | Extra large       |     xl          | ≥1200px    |
 | Extra extra large |     xxl         | ≥1400px    |
+
+## Disclaimer
+
+Thanks to Saepul Nahwan. Who made the original Pokedex screen layout. Checkout his page on dribble:
+<a href="https://dribbble.com/saepulnahwan23" target="_blank">Saepul Nahwan</a> /
+<a href="https://dribbble.com/shots/6540871-Pokedex-App" target="_blank">Pokedex</a>

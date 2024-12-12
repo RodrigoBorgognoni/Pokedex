@@ -14,13 +14,12 @@
     margin: var(--margin-pokemon);
     padding: var(--padding-pokemon);
     border-radius: var(--border-radius);
-    background-color: var(--background-grass);
 }
 
 .pokemon .number {
     color: var(--text-color-black);
     opacity: var(--text-opacity);
-    text-align: var(--text-align);
+    text-align: var(--text-align-right);
     font-size: var(--font-size-poketype);
 }
 
@@ -43,16 +42,72 @@
 }
 
 .pokemon .detail .types .type {
-    background-color: var(--background-grass-type);
     color: var(--text-color-white);
     padding: var(--padding-type);
     margin: var(--margin-type);
+    text-align: var(--text-align-center);
     font-size: var(--font-size-poketype);
     border-radius: var(--border-radius);
+    filter: brightness(var(--brightness))
 }
 
 .pokemon .detail img {
     max-width: var(--img-width-full);
     height: var(--half-gutter);
     align-self: var(--align-flex-end);
+}
+
+.normal {
+    background-color: var(--background-type-normal);
+}
+.fire {
+    background-color: var(--background-type-fire);
+}
+.grass {
+    background-color: var(--background-type-grass);
+}
+.water {
+    background-color: var(--background-type-water);
+}
+.electric {
+    background-color: var(--background-type-electric);
+}
+.ice {
+    background-color: var(--background-type-ice);
+}
+.ground {
+    background-color: var(--background-type-ground);
+}
+.flying {
+    background-color: var(--background-type-flying);
+}
+.poison {
+    background-color: var(--background-type-poison);
+}
+.fighting {
+    background-color: var(--background-type-fighting);
+}
+.psychic {
+    background-color: var(--background-type-psychic);
+}
+.dark {
+    background-color: var(--background-type-dark);
+}
+.rock {
+    background-color: var(--background-type-rock);
+}
+.bug {
+    background-color: var(--background-type-bug);
+}
+.ghost {
+    background-color: var(--background-type-ghost);
+}
+.steel {
+    background-color: var(--background-type-steel);
+}
+.dragon {
+    background-color: var(--background-type-dragon);
+}
+.fairy {
+    background-color: var(--background-type-fairy);
 }

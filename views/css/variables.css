@@ -1,14 +1,14 @@
-:root{
+:root {
     --font-family: 'Roboto', sans-serif;
-    --font-size-poketype: .625rem; 
+    --font-size-poketype: 0.8rem;
     --box-sizing: border-box;
     --list-type-none: none;
     --height-full: 100vh;
     --width-full: 100vw;
     --img-width-full: 100%;
-    
+
     --border-radius: 1rem;
-    
+
     --display-grid: grid;
     --grid-one-column: 1fr;
     --grid-two-column: 1fr 1fr;
@@ -26,28 +26,45 @@
     --content-padding: 1rem;
     --padding-zero: 0;
     --padding-pokemon: 1rem;
-    --padding-type: .25rem .5rem;
-    
+    --padding-type: 0.25rem 0.5rem;
+
     --content-margin-h1: 0 0 1rem;
     --margin-zero: 0;
     --margin-pokemon: 0.5rem;
-    --margin-type: .25rem 0;
+    --margin-type: 0.25rem 0;
     --margin-mQuery-lg: 1rem auto;
-    
+
     --height-mQuery-lg: auto;
 
-    --background-grey: #F6F8FC;
-    --background-white: #FFFFFF;
-    --background-grass: #48D0B0;
-    --background-grass-type: #61E1C9;
-    --background-fire: #FB6D6C;
-    --background-water:#77BEFE;
+    --background-grey: #f6f8fc;
+    --background-white: #ffffff;
     
+    --background-type-normal: #a6a877;
+    --background-type-fire: #ee7f30;
+    --background-type-grass: #77c850;
+    --background-type-water: #678fee;
+    --background-type-electric: #f7cf2e;
+    --background-type-ice: #98d5d7;
+    --background-type-ground: #dfbf69;
+    --background-type-flying: #a98ff0;
+    --background-type-poison: #a040a0;
+    --background-type-fighting: #bf3029;
+    --background-type-psychic: #f65687;
+    --background-type-dark: #725847;
+    --background-type-rock: #b8a137;
+    --background-type-bug: #a8b720;
+    --background-type-ghost: #6e5896;
+    --background-type-steel: #b9b7cf;
+    --background-type-dragon: #6f38f6;
+    --background-type-fairy: #f9aec7;
+
     --text-color-black: #000;
     --text-color-white: #fff;
     --text-opacity: 0.3;
-    --text-align: right;
-    
+    --text-align-right: right;
+    --text-align-center: center;
+    --brightness: 1.1;
+
     --gutter: 160px;
     --gutter-2x: calc(var(--gutter) * 2);
     --gutter-4x: calc(var(--gutter) * 4);
