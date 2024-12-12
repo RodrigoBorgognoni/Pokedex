@@ -2,19 +2,20 @@
 
 * {
     font-family: var(--font-family);
+    font-weight: var(--font-weight);
     box-sizing: var(--box-sizing);
 }
 body {
-    background-color: var(--background-grey);
+    background-color: var(--color-grey);
 }
 
 .content {
-    padding: var(--content-padding);
-    background-color: var(--background-white);
+    padding: var(--padding-content);
+    background-color: var(--color-white);
     height: var(--height-full);
     width: var(--width-full);
 }
 /* 
 .content h1 {
-    margin: var(--content-margin-h1);
+    margin: var(--margin-content-h1);
 } */

@@ -1,13 +1,17 @@
 :root {
-    --font-family: 'Roboto', sans-serif;
+    --font-family: 'M PLUS Rounded 1c','Roboto', sans-serif;
     --font-size-poketype: 0.8rem;
+    --font-size-button: 1.1rem;
+    --font-weight: 700;
     --box-sizing: border-box;
     --list-type-none: none;
     --height-full: 100vh;
     --width-full: 100vw;
     --img-width-full: 100%;
-
+    --btn-width-full: 100%;
+    --cursor-type: pointer;
     --border-radius: 1rem;
+    --border-radius-button: 5px;
 
     --display-grid: grid;
     --grid-one-column: 1fr;
@@ -23,58 +27,61 @@
     --align-center: center;
     --justify-space-between: space-between;
 
-    --content-padding: 1rem;
+    --padding-content: 1rem;
     --padding-zero: 0;
     --padding-pokemon: 1rem;
+    --padding-button: 0.75rem 1.25rem 0.675rem;
     --padding-type: 0.25rem 0.5rem;
 
-    --content-margin-h1: 0 0 1rem;
+    --margin-content-h1: 0 0 1rem;
     --margin-zero: 0;
     --margin-pokemon: 0.5rem;
+    --margin-button: 1.5rem 0 0.5rem;
     --margin-type: 0.25rem 0;
     --margin-mQuery-lg: 1rem auto;
-
-    --height-mQuery-lg: auto;
-
-    --background-grey: #f6f8fc;
-    --background-white: #ffffff;
     
-    --background-type-normal: #a6a877;
-    --background-type-fire: #ee7f30;
-    --background-type-grass: #77c850;
-    --background-type-water: #678fee;
-    --background-type-electric: #f7cf2e;
-    --background-type-ice: #98d5d7;
-    --background-type-ground: #dfbf69;
-    --background-type-flying: #a98ff0;
-    --background-type-poison: #a040a0;
-    --background-type-fighting: #bf3029;
-    --background-type-psychic: #f65687;
-    --background-type-dark: #725847;
-    --background-type-rock: #b8a137;
-    --background-type-bug: #a8b720;
-    --background-type-ghost: #6e5896;
-    --background-type-steel: #b9b7cf;
-    --background-type-dragon: #6f38f6;
-    --background-type-fairy: #f9aec7;
-
-    --text-color-black: #000;
-    --text-color-white: #fff;
     --text-opacity: 0.3;
     --text-align-right: right;
-    --text-align-center: center;
-    --brightness: 1.1;
-
+    --brightness: 1.2;
+    
     --gutter: 160px;
     --gutter-2x: calc(var(--gutter) * 2);
     --gutter-4x: calc(var(--gutter) * 4);
     --half-gutter: calc(var(--gutter) / 2);
     --quarter-gutter: calc(var(--gutter) / 4);
-
+    
+    --height-mQuery-lg: auto;
     --mQuery-width-xsm: 576px;
     --mQuery-width-sm: 576px;
     --mQuery-width-md: 768px;
     --mQuery-width-lg: 992px;
     --mQuery-width-xl: 1200px;
     --mQuery-width-xxl: 1400px;
+
+    --color-grey: #f6f8fc;
+    --color-black: #000;
+    --color-button: #313131;
+    --color-white: #fff;
+    
+    --background-type-normal: #A4ACAF;
+    --background-type-fire: #FC7D24;
+    --background-type-grass: #9BCB50;
+    --background-type-water: #4593C4;
+    --background-type-electric: #EED534;
+    --background-type-ice: #51C4E7;
+    --background-type-ground-upper: #F7DE3F;
+    --background-type-ground-down: #AA9742;
+    --background-type-flying-upper: #3DC7EF;
+    --background-type-flying-down: #BDB9B8;
+    --background-type-poison: #B97EC9;
+    --background-type-fighting: #D56723;
+    --background-type-psychic: #F365B8;
+    --background-type-dark: #707070;
+    --background-type-rock: #A28B21;
+    --background-type-bug: #729F3E;
+    --background-type-ghost: #7C62A3;
+    --background-type-steel: #9EB7B8;
+    --background-type-dragon-upper: #53A4CF;
+    --background-type-dragon-down: #F06E57;
+    --background-type-fairy: #FDB8E9;
 }

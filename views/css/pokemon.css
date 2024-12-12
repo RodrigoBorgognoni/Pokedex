@@ -1,5 +1,24 @@
 @import url('variables.css');
 
+.pagination {
+    display: var(--display-flex);
+    flex-direction: var(--flex-direction-row);
+    justify-content: var(--align-center);
+    align-items: var(--align-center);
+    width: var(--btn-width-full);
+
+    #loadNext {
+        border: var(--list-type-none);
+        border-radius: var(--border-radius-button);
+        padding: var(--padding-button);
+        margin: var(--margin-button);
+        color: var(--color-white);
+        background-color: var(--color-button);
+        cursor: pointer;
+        font-size: var(--font-size-button);
+    }
+}
+
 .pokemon_list {
     list-style: var(--list-type-none);
     padding: var(--padding-zero);
@@ -17,14 +36,14 @@
 }
 
 .pokemon .number {
-    color: var(--text-color-black);
+    color: var(--color-black);
     opacity: var(--text-opacity);
     text-align: var(--text-align-right);
     font-size: var(--font-size-poketype);
 }
 
 .pokemon .name {
-    color: var(--text-color-white);
+    color: var(--color-white);
     margin-bottom: var(--margin-zero);
 }
 
@@ -45,10 +64,10 @@
     color: var(--text-color-white);
     padding: var(--padding-type);
     margin: var(--margin-type);
-    text-align: var(--text-align-center);
+    text-align: var(--align-center);
     font-size: var(--font-size-poketype);
     border-radius: var(--border-radius);
-    filter: brightness(var(--brightness))
+    filter: brightness(var(--brightness));
 }
 
 .pokemon .detail img {
@@ -76,10 +95,10 @@
     background-color: var(--background-type-ice);
 }
 .ground {
-    background-color: var(--background-type-ground);
+    background: linear-gradient(to bottom, var(--background-type-ground-upper) 50%, var(--background-type-ground-down) 50%);
 }
 .flying {
-    background-color: var(--background-type-flying);
+    background: linear-gradient(to bottom, var(--background-type-flying-upper) 50%, var(--background-type-flying-down) 50%);
 }
 .poison {
     background-color: var(--background-type-poison);
@@ -106,7 +125,7 @@
     background-color: var(--background-type-steel);
 }
 .dragon {
-    background-color: var(--background-type-dragon);
+    background: linear-gradient(to bottom, var(--background-type-dragon-upper) 50%, var(--background-type-dragon-down) 50%);
 }
 .fairy {
     background-color: var(--background-type-fairy);
