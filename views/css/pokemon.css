@@ -17,6 +17,10 @@
         cursor: pointer;
         font-size: var(--font-size-button);
     }
+
+    .desativado {
+        cursor: not-allowed !important;
+    }
 }
 
 .pokemon_list {

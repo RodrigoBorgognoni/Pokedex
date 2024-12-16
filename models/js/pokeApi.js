@@ -16,7 +16,7 @@ pokeApi.getPokemonDetail = async function (pokemon) {
 };
 
 // Async function to get a list of Pokémons with their details
-pokeApi.getPokemons = async function (offset = 0, limit = 8) {
+pokeApi.getPokemons = async function (offset = 0, limit = 10) {
     // Define the URL with offset and limit parameters
     const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
     try {
