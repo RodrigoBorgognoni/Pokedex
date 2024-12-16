@@ -8,7 +8,7 @@ function capitalizeFirstLetter(pokeName) {
 export function renderPokemonList(pokemons, container) {
     container.innerHTML += pokemons.map((pokemon) => 
         `<li class="pokemon ${pokemon.color}">
-            <span class="number">#${pokemon.order.toString().padStart(3, '0')}</span>
+            <span class="number">#${pokemon.id.toString().padStart(3, '0')}</span>
             <span class="name">${capitalizeFirstLetter(pokemon.name)}</span>
             <div class="detail">
                 <ol class="types">

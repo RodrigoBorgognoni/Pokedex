@@ -3,7 +3,7 @@ import { renderPokemonList } from '../../views/js/pokemonListView.js';
 
 const loadNextButton = document.getElementById('loadNext');
 let currentOffset = 0;
-const limit = 16;
+const limit = 8;
 let isLoading = false;
 
 async function loadPokemons(offset, limit, container) {

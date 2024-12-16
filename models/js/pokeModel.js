@@ -1,6 +1,6 @@
 class Pokemon {
-    constructor(order, name, color, types, photo) {
-        this.order = order;
+    constructor(id, name, color, types, photo) {
+        this.id = id;
         this.name = name;
         this.color = color;
         this.types = types;
@@ -17,7 +17,7 @@ export function convertApiDetailsToPokemon(pokeDetail) {
 
     // Create and return a new Pokemon instance with the extracted details
     return new Pokemon(
-        pokeDetail.order, // The number of the Pokémon
+        pokeDetail.id, // The number of the Pokémon
         pokeDetail.name,  // The name of the Pokémon
         color,            // The primary color/type of the Pokémon
         types,            // Array of all types of the Pokémon
