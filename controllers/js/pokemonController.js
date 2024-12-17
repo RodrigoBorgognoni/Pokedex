@@ -31,12 +31,12 @@ export async function loadPokemons() {
     }
 }
 
-// Função para buscar Pokémon por nome ou tipo
+// function to search by type or name
 async function searchPokemon(query) {
     try {
-        const data = await pokeApi.searchPokemon(query); // Buscar Pokémon pela query
+        const data = await pokeApi.searchPokemon(query);
         if (data) {
-            pokemonList.innerHTML = ''; // Limpar a lista atual
+            pokemonList.innerHTML = '';
             renderPokemonList(data, pokemonList);
         } else {
             window.alert('Nenhum Pokémon encontrado.');
@@ -47,20 +47,26 @@ async function searchPokemon(query) {
     }
 }
 
+// debounce function to set a timeout
+function debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
 
-// Filter Pokémon quando o usuário clicar no botão
 searchButton.addEventListener('click', () => {
     const query = searchInput.value.toLowerCase();
     if (query) {
         searchPokemon(query);
     }
 });
-// Filtrar Pokémon quando o usuário pressionar Enter no campo de entrada
-searchInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
+
+searchInput.addEventListener('input', debounce(() => {
         const query = searchInput.value.toLowerCase();
         if (query) {
             searchPokemon(query);
         }
-    }
-});
+    }, 300)// waits 300ms between searches
+); 

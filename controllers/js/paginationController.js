@@ -4,7 +4,7 @@ import { renderPokemonList } from '../../views/js/pokemonListView.js';
 const loadNextButton = document.getElementById('loadNext');
 let currentOffset = 0;
 const limit = 10;
-const firstGen = 151;
+//const firstGen = 151;
 let isLoading = false;
 
 function disableButton() {
@@ -36,13 +36,15 @@ export function setupPagination(container) {
     loadNextButton.addEventListener('click', () => {
         if (!isLoading) {
             currentOffset += limit;
+            loadPokemons(currentOffset, limit, container);
+/*             //renders only first Gen pokemon
             const quantityPokemonNextPage = currentOffset + limit;
             if (quantityPokemonNextPage >= firstGen) {
                 const newLimit = firstGen - currentOffset;
                 loadPokemons(currentOffset, newLimit, container);
                 disableButton();
             } // Stop multiple loading
-            else loadPokemons(currentOffset, limit, container);
+            else loadPokemons(currentOffset, limit, container); */
         }
     });
 }
