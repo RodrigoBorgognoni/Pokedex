@@ -36,7 +36,6 @@ export function setupPagination(container) {
     loadNextButton.addEventListener('click', () => {
         if (!isLoading) {
             currentOffset += limit;
-            debugger
             const quantityPokemonNextPage = currentOffset + limit;
             if (quantityPokemonNextPage >= firstGen) {
                 const newLimit = firstGen - currentOffset;

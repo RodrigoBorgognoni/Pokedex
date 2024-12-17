@@ -35,4 +35,36 @@ pokeApi.getPokemons = async function (offset = 0, limit = 10) {
     }
 };
 
+// async function to search pokemon by name or type
+pokeApi.searchPokemon = async function (query) {
+    try {
+        const urlByName = `https://pokeapi.co/api/v2/pokemon/${query.toLowerCase()}`;
+        const responseByName = await fetch(urlByName); // tries to search pokemon by name
+
+        if (responseByName.ok) {
+            const dataByName = await responseByName.json();
+            // returns converted result
+            return [convertApiDetailsToPokemon(dataByName)];
+        }
+
+        //If search by name fails, search by type
+        const urlByType = `https://pokeapi.co/api/v2/type/${query.toLowerCase()}`;
+        const responseByType = await fetch(urlByType); // tries to search pokemon by type
+
+        if (responseByType.ok) {
+            const dataByType = await responseByType.json();
+            const pokeDetailsPromises = dataByType.pokemon.map((pokeWrapper) => this.getPokemonDetail(pokeWrapper.pokemon));
+            return await Promise.all(pokeDetailsPromises);
+        }
+
+        // if no result, throw error
+        throw new Error('Nenhum Pokémon encontrado para a consulta fornecida.');
+    } catch (error) {
+        console.error('Erro ao buscar Pokémon:', error);
+        throw error;
+    }
+};
+
 export default pokeApi;
+
+

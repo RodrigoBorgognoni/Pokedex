@@ -9,9 +9,15 @@
     --width-full: 100vw;
     --img-width-full: 100%;
     --btn-width-full: 100%;
+    --search-width-full: 100%;
     --cursor-type: pointer;
     --border-radius: 1rem;
+    --border-none: none;
     --border-radius-button: 5px;
+    --border-radius-search: 5px;
+
+    --search-img-width: 2.5rem;
+    --search-img-height: 2.5rem;
 
     --display-grid: grid;
     --grid-one-column: 1fr;
@@ -59,10 +65,12 @@
     --mQuery-width-xxl: 1400px;
 
     --color-grey: #f6f8fc;
+    --color-grey-search: #ccc;
     --color-black: #000;
     --color-button: #313131;
     --color-white: #fff;
     
+    --background-transparent: transparent;
     --background-type-normal: #A4ACAF;
     --background-type-fire: #FC7D24;
     --background-type-grass: #9BCB50;

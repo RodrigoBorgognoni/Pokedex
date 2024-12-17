@@ -9,6 +9,33 @@ body {
     background-color: var(--color-grey);
 }
 
+.search-bar-container {
+    display: flex;
+    align-items: center;
+}
+.search-bar {
+    padding: var(--padding-content);
+    width: var(--width-full);
+    max-width: var(--search-width-full);
+    border: 1px solid var(--color-grey-search);
+    border-radius: var(--border-radius-search);
+}
+.search-button {
+    background-color: var(--background-transparent);
+    border: var(--border-none);
+    padding: var(--padding-content);
+    border-radius: var(--border-radius-search);
+    display: var(--display-flex);
+    justify-content: var(--align-center);
+    align-items: var(--align-center);
+    cursor: pointer;
+}
+
+.search-icon {
+    width: var(--search-img-width);
+    height: var(--search-img-height);
+}
+
 .content {
     padding: var(--padding-content);
     background-color: var(--color-white);

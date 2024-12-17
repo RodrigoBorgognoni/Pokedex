@@ -21,7 +21,10 @@
         /> -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+        />
         <!-- CSS -->
         <link rel="stylesheet" href="views/css/styles.css" />
         <!-- JS -->
@@ -31,14 +34,24 @@
         <link rel="icon" href="views/icons/favicon2.ico" type="image/x-icon" />
     </head>
     <body>
-        <section class="content">
+        <article class="content">
             <h1>Pokedex</h1>
-            <ol id="pokemon_list" class="pokemon_list">
-                <!-- Pokemons Here -->
-            </ol>
-            <div class="pagination">
-                <button id="loadNext" type="button">Explore Mais Pokémon</button>
-            </div>
-        </section>
+            <section class="container">
+                <div class="search-bar-container">
+                    <input type="text" id="searchInput" class="search-bar" placeholder="Busque Pokémon por nome ou tipo" />
+                    <button id="searchButton" class="search-button"><img class="search-icon" src="views/icons/searchIcon.png" alt="Lupa" /></button>
+                </div>
+            </section>
+            <section>
+                <ol id="pokemon_list" class="pokemon_list">
+                    <!-- Pokemons Here -->
+                </ol>
+            </section>
+            <section>
+                <div class="pagination">
+                    <button id="loadNext" type="button">Explore Mais Pokémon</button>
+                </div>
+            </section>
+        </article>
     </body>
 </html>
