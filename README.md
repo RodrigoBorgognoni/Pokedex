@@ -19,6 +19,9 @@ In vs code Terminal execute the following command:
 * If it says **_RemoteSigned_** you're all good. If it's **_Restricted_**, type:
     * **_Set-ExecutionPolicy RemoteSigned_** to use http-server.
 
+![image](https://github.com/user-attachments/assets/bab5becc-7d78-44e8-af30-fe13d468fb06)
+
+
 ## Responsive Layout Breakpoint
 | Breakpoint        | Class infix     | Dimensions |
 |-------------------|-----------------|------------| 
