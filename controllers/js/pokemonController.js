@@ -43,7 +43,6 @@ async function searchPokemon(query) {
         }
     } catch (error) {
         console.error('Erro ao buscar Pokémon:', error);
-        window.alert('Ocorreu um erro ao tentar buscar os Pokémon. Por favor, tente novamente mais tarde.');
     }
 }
 
@@ -55,13 +54,6 @@ function debounce(func, wait) {
         timeout = setTimeout(() => func.apply(this, args), wait);
     };
 }
-
-searchButton.addEventListener('click', () => {
-    const query = searchInput.value.toLowerCase();
-    if (query) {
-        searchPokemon(query);
-    }
-});
 
 searchInput.addEventListener('input', debounce(() => {
         const query = searchInput.value.toLowerCase();
