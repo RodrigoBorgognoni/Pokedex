@@ -1,17 +1,24 @@
-import pokeApi from '../../models/js/pokeApi.js';
-import { renderPokemonList } from '../../views/js/pokemonListView.js';
-import { filterPokemonList } from '../../views/js/pokemonListView.js';
+import pokeApi from '../models/pokeApi.js';
+import { setupPagination, resetPagination, setCurrentGeneration, disableButton, enableButton } from './paginationController.js';
+import { renderPokemonList } from '../views/js/pokemonListView.js';
+import { getGenerationRange } from './utils/utils.js';
 
 const pokemonList = document.getElementById('pokemon_list');
 const searchInput = document.getElementById('searchInput');
-const searchButton = document.getElementById('searchButton');
+const generationFilters = document.querySelectorAll('input[name="generation"]');
 
-// Função para carregar os Pokémon
-export async function loadPokemons() {
+const limit = 10;
+
+// Function to load all Pokemons
+export async function loadPokemons(generation = '1', offset = 0) {
+    const [startId, endId] = getGenerationRange(generation);
     try {
-        const data = await pokeApi.getPokemons();
+        const data = await pokeApi.getPokemonsByRange(startId, endId, limit, offset);
         if (data) {
             renderPokemonList(data, pokemonList);
+            if (endId - startId <= offset + limit) {
+                disableButton();
+            }
         }
     } catch (error) {
         console.error('Erro ao carregar Pokémons:', error);
@@ -55,10 +62,26 @@ function debounce(func, wait) {
     };
 }
 
-searchInput.addEventListener('input', debounce(() => {
+searchInput.addEventListener(
+    'input',
+    debounce(() => {
         const query = searchInput.value.toLowerCase();
         if (query) {
             searchPokemon(query);
+        } else {
+            const selectedGeneration = document.querySelector('input[name="generation"]:checked').value;
+            loadPokemons(selectedGeneration);
         }
-    }, 300)// waits 300ms between searches
-); 
+    }, 300) // waits 300ms between searches
+);
+
+// Load Pokemon based on selected Gen
+generationFilters.forEach((filter) => {
+    filter.addEventListener('change', (e) => {
+        const generation = e.target.value;
+        setCurrentGeneration(generation);
+        resetPagination(generation);
+        pokemonList.innerHTML = '';
+        loadPokemons(generation, 0);
+    });
+});

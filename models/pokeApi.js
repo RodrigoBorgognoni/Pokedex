@@ -16,21 +16,35 @@ pokeApi.getPokemonDetail = async function (pokemon) {
 };
 
 // Async function to get a list of Pokémons with their details
-pokeApi.getPokemons = async function (offset = 0, limit = 10) {
-    // Define the URL with offset and limit parameters
-    const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
+pokeApi.getPokemonsByRange = async function (startId, endId, limit = 10, offset = 0) {
     try {
-        const response = await fetch(url); // Fetch the list of Pokémons from the API
-        const json = await response.json(); // Parse the response as JSON
+        const promises = [];
+        const start = startId + offset;
+        const end = Math.min(startId + offset + limit - 1, endId);
 
-        const pokemons = json.results; // Extract the list of Pokémons from the JSON response
-
-        // Map over the list of Pokémons to get their details
-        const pokeDetailsPromises = pokemons.map((pokemon) => this.getPokemonDetail(pokemon));
-        // Wait for all the promises to resolve and get the details
-        return await Promise.all(pokeDetailsPromises);
+        for (let id = start; id <= end; id++) {
+            const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+            promises.push(fetch(url).then((response) => response.json()));
+        }
+        const pokemons = await Promise.all(promises);
+        return pokemons.map((data) => convertApiDetailsToPokemon(data));
     } catch (error) {
         console.error('Erro ao buscar dados:', error);
+        throw error;
+    }
+};
+
+// Async function to get pokemons based on ID range
+pokeApi.getPokemonsByRange = async function (startId, endId) {
+    const promises = [];
+    for (let id = startId; id <= endId; id++) {
+        promises.push(fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then((response) => response.json()));
+    }
+    try {
+        const data = await Promise.all(promises);
+        return data.map(convertApiDetailsToPokemon);
+    } catch (error) {
+        console.error('Erro ao buscar Pokémons por intervalo de IDs:', error);
         throw error;
     }
 };
@@ -66,5 +80,3 @@ pokeApi.searchPokemon = async function (query) {
 };
 
 export default pokeApi;
-
-

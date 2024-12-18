@@ -1,5 +1,5 @@
-import { setupPagination } from './controllers/js/paginationController.js';
-import { loadPokemons } from './controllers/js/pokemonController.js';
+import { setupPagination } from './controllers/paginationController.js';
+import { loadPokemons } from './controllers/pokemonController.js';
 
 // Inicializa a paginação e carrega os Pokémon quando a página é carregada
 document.addEventListener('DOMContentLoaded', () => {

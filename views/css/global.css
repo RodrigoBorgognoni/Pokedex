@@ -36,6 +36,13 @@ body {
     height: var(--search-img-height);
 }
 
+.generation-filters {
+    margin: 20px auto;
+}
+.generation-filters label {
+    margin-right: 10px;
+}
+
 .content {
     padding: var(--padding-content);
     background-color: var(--color-white);
