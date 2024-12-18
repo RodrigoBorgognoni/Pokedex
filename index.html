@@ -29,7 +29,7 @@
         <link rel="stylesheet" href="views/css/styles.css" />
         <!-- JS -->
         <script type="module" src="./main.js" defer></script>
-        <script type="module" src="./controllers/pokemonController.js" defer></script>
+        <script type="module" src="./controllers/js/pokemonController.js" defer></script>
         <!-- FAVICON -->
         <link rel="icon" href="views/icons/favicon2.ico" type="image/x-icon" />
     </head>
@@ -41,19 +41,6 @@
                     <input type="text" id="searchInput" class="search-bar" placeholder="Busque Pokémon por nome ou tipo" />
                     <button id="searchButton" class="search-button"><img class="search-icon" src="views/icons/searchIcon.png" alt="Lupa" /></button>
                 </div>
-            </section>
-            <section>
-                <div class="generation-filters"> 
-                    <label><input type="radio" name="generation" value="1" checked> 1ª Gen</label> 
-                    <label><input type="radio" name="generation" value="2"> 2ª Gen</label>
-                    <label><input type="radio" name="generation" value="3"> 3ª Gen</label> 
-                    <label><input type="radio" name="generation" value="4"> 4ª Gen</label> 
-                    <label><input type="radio" name="generation" value="5"> 5ª Gen</label> 
-                    <label><input type="radio" name="generation" value="6"> 6ª Gen</label> 
-                    <label><input type="radio" name="generation" value="7"> 7ª Gen</label> 
-                    <label><input type="radio" name="generation" value="8"> 8ª Gen</label> 
-                    <label><input type="radio" name="generation" value="9"> 9ª Gen</label>
-                    <label><input type="radio" name="generation" value="0"> All Gen</label> 
             </section>
             <section>
                 <ol id="pokemon_list" class="pokemon_list">
