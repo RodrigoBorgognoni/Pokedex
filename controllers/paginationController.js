@@ -21,14 +21,18 @@ export function enableButton() {
 }
 
 async function loadPokemonsByGeneration(generation, offset, limit, container) {
-    const [startId, endId] = getGenerationRange(generation);
+    const [startId, endId] = getGenerationRange(generation); 
+    if (isLoading) return; // Stops double loading
+
     try {
-        const data = await pokeApi.getPokemonsByRange(startId, endId, limit, offset);
+        isLoading = true; // Set isLoading to true when starting
+        const data = await pokeApi.getPokemonsByRange(startId + offset, Math.min(startId + offset + limit - 1, endId));
         renderPokemonList(data, container);
-        isLoading = false;
-        if (endId - startId <= offset + limit) {
-            disableButton();
-        }
+        isLoading = false; // Reset isLoading after data is rendered
+
+        if (startId + offset + limit - 1 >= endId) {
+            disableButton()
+        } else enableButton();
     } catch (error) {
         console.error('Erro ao carregar Pokémons:', error);
         window.alert('Não foi possível carregar os Pokémons');

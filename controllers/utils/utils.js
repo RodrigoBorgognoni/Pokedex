@@ -6,7 +6,7 @@ export function getGenerationRange(generation) {
         case '2':
             return [152, 251];
         case '3':
-            return [252, 388];
+            return [252, 386];
         case '4':
             return [387, 493];
         case '5':
@@ -18,9 +18,9 @@ export function getGenerationRange(generation) {
         case '8':
             return [810, 905];
         case '9':
-            return [906, 1302]; //Assuming current limit of 1302
+            return [906, 1026]; //Assuming current limit of 1026
         case '0':
-            return [1, 1302];
+            return [1, 1026]; //Assuming current limit of 1026
         default:
             return [1, 151];
     }

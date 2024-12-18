@@ -7,18 +7,19 @@ const pokemonList = document.getElementById('pokemon_list');
 const searchInput = document.getElementById('searchInput');
 const generationFilters = document.querySelectorAll('input[name="generation"]');
 
+setupPagination(pokemonList);
 const limit = 10;
 
 // Function to load all Pokemons
 export async function loadPokemons(generation = '1', offset = 0) {
     const [startId, endId] = getGenerationRange(generation);
     try {
-        const data = await pokeApi.getPokemonsByRange(startId, endId, limit, offset);
+        const data = await pokeApi.getPokemonsByRange(startId + offset, Math.min(startId + offset + limit - 1, endId));
         if (data) {
             renderPokemonList(data, pokemonList);
-            if (endId - startId <= offset + limit) {
+            if (startId + offset + limit > endId) {
                 disableButton();
-            }
+            } else enableButton();
         }
     } catch (error) {
         console.error('Erro ao carregar Pokémons:', error);
@@ -68,9 +69,6 @@ searchInput.addEventListener(
         const query = searchInput.value.toLowerCase();
         if (query) {
             searchPokemon(query);
-        } else {
-            const selectedGeneration = document.querySelector('input[name="generation"]:checked').value;
-            loadPokemons(selectedGeneration);
         }
     }, 300) // waits 300ms between searches
 );
@@ -81,6 +79,7 @@ generationFilters.forEach((filter) => {
         const generation = e.target.value;
         setCurrentGeneration(generation);
         resetPagination(generation);
+        enableButton();
         pokemonList.innerHTML = '';
         loadPokemons(generation, 0);
     });
