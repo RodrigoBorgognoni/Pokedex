@@ -1,10 +1,12 @@
 class Pokemon {
-    constructor(id, name, color, types, photo) {
+    constructor(id, name, color, types, photo, weight, height) {
         this.id = id;
         this.name = name;
         this.color = color;
         this.types = types;
         this.photo = photo;
+        this.weight = weight;
+        this.height = height;
     }
 }
 
@@ -18,9 +20,11 @@ export function convertApiDetailsToPokemon(pokeDetail) {
     // Create and return a new Pokemon instance with the extracted details
     return new Pokemon(
         pokeDetail.id, // The number of the Pokémon
-        pokeDetail.name,  // The name of the Pokémon
-        color,            // The primary color/type of the Pokémon
-        types,            // Array of all types of the Pokémon
-        pokeDetail.sprites.other['official-artwork'].front_default // URL of the Pokémon's official artwork
+        pokeDetail.name, // The name of the Pokémon
+        color, // The primary color/type of the Pokémon
+        types, // Array of all types of the Pokémon
+        pokeDetail.sprites.other['official-artwork'].front_default, // URL of the Pokémon's official artwork
+        pokeDetail.weight,
+        pokeDetail.height
     );
 }
