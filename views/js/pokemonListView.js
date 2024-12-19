@@ -20,14 +20,15 @@ export function renderPokemonList(pokemons, container) {
                     .join('')} </ol> <img src="${pokemon.photo}" alt="${pokemon.name}" /> </div> </li>`
         )
         .join(''); 
-    // Adiciona evento de clique para exibir o modal com detalhes do Pokémon
+
+    //Adds click event to modal
     container.querySelectorAll('.pokemon').forEach((pokemonItem) => {
-        const pokemonId = parseInt(pokemonItem.dataset.id, 10); // Remover zeros à esquerda
+        const pokemonId = parseInt(pokemonItem.dataset.id, 10); // converts id string into number. Removes zeros to the left
         pokemonItem.addEventListener('click', () => showModal(pokemonId));
     });
 }
 
-// Função para filtrar a lista de Pokémon
+// Filter Pokemon List
 export function filterPokemonList(filter, container) {
     const cards = container.querySelectorAll('.pokemon');
     cards.forEach((card) => {

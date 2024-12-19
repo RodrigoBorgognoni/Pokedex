@@ -41,7 +41,7 @@
 
 .pokemon .number {
     color: var(--color-black);
-    opacity: var(--text-opacity);
+    opacity: var(--opacity);
     text-align: var(--text-align-right);
     font-size: var(--font-size-poketype);
 }

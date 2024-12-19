@@ -43,10 +43,11 @@
     --margin-zero: 0;
     --margin-pokemon: 0.5rem;
     --margin-button: 1.5rem 0 0.5rem;
+    --margin-modal: 5% auto;
     --margin-type: 0.25rem 0;
     --margin-mQuery-lg: 1rem auto;
     
-    --text-opacity: 0.3;
+    --opacity: 0.3;
     --text-align-right: right;
     --brightness: 1.2;
     
@@ -67,6 +68,7 @@
     --color-grey: #f6f8fc;
     --color-grey-search: #ccc;
     --color-black: #000;
+    --color-black-rgba: rgba(0,0,0,0.4);
     --color-button: #313131;
     --color-white: #fff;
     

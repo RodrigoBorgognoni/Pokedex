@@ -7,13 +7,17 @@ export function showModal(pokemonId) {
     const pokemonDetails = document.getElementById('pokemonDetails');
     pokemonDetails.innerHTML = '';
 
-    pokeApi.getPokemonDetail(pokemonId).then(pokemon => {
+    pokeApi.getPokemonDetail(pokemonId).then((pokemon) => {
         const content = `
-            <h2>${pokemon.name}</h2>
+        <h2 class="modal_text">${pokemon.name}</h2>
+        <div class="modal_pokemon">
             <img src="${pokemon.photo}" alt="${pokemon.name}">
-            <p>Type: ${pokemon.types.join(', ')}</p>
-            <p>Weight: ${pokemon.weight} kg</p>
-            <p>Height: ${pokemon.height} m</p>
+        </div>  
+            <span class="modal_text">
+                <p>Type: ${pokemon.types.join(', ')}</p>
+                <p>Weight: ${parseInt(pokemon.weight)/10} kg</p>
+                <p>Height: ${parseInt(pokemon.height)/10} m</p>
+            </span>
         `;
         pokemonDetails.innerHTML = content;
     });
@@ -21,12 +25,12 @@ export function showModal(pokemonId) {
     modal.style.display = 'block'; // show modal
 }
 
-span.onclick = function() {
+span.onclick = function () {
     modal.style.display = 'none'; // Close modal
-}
+};
 
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = 'none'; // Close modal when clicking outside
     }
-}
+};
